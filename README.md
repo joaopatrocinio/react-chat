@@ -1,6 +1,6 @@
-# NOTE
-~~_Check primary repository at <https://github.com/joaopatrocinio/react-chat-api>_~~
-
+**_Check primary repository at <https://github.com/joaopatrocinio/react-chat-api>_**
+***
+# React Chat
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
