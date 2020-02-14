@@ -72,16 +72,26 @@ class App extends Component {
         this.state = {
             messages: []
         }
+        
+        this.addMessage = this.addMessage.bind(this)
+    }
+
+    addMessage(msg) {
+        const messages = this.state.messages
+        messages.push(msg)
+        this.setState({
+            messages: messages
+        })
     }
 
     componentDidMount() {
-        socket.on("chat message", msg => {
-            console.log("message received")
-            const messages = this.state.messages
-            messages.push(msg)
-            this.setState({
-                messages: messages
+        socket.on("previous messages", msgs => {
+            msgs.map(msg => {
+                return this.addMessage(msg.message)
             })
+        })
+        socket.on("chat message", msg => {
+            this.addMessage(msg)
         })
     }
 
